@@ -1,4 +1,5 @@
 import { TIMEOUT_SEC } from './config.js';
+import { Client, Account, ID } from 'appwrite';
 
 export const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -29,6 +30,15 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw error;
   }
 };
+
+const client = new Client();
+
+client
+  .setEndpoint(process.env.APPWRITE_API_URL)
+  .setProject(process.env.APPWRITE_PROJECT_ID);
+
+export const account = new Account(client);
+// createAccount()
 
 // export const getJSON = async function (url) {
 //   try {

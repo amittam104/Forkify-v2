@@ -1,5 +1,5 @@
 import { API_URL, RES_NO_PAGE, KEY } from './config.js';
-import { AJAX } from './helpers.js';
+import { AJAX, account } from './helpers.js';
 // import { getJSON, sendJSON } from './helpers.js';
 
 export const state = {
@@ -150,6 +150,21 @@ export const uploadRecipe = async function (newRecipe) {
 
     addBookMark(state.recipe);
   } catch (error) {
+    throw error;
+  }
+};
+
+export const createAccount = async function () {
+  try {
+    const promise = await account.create(
+      ID.unique(),
+      'amittambulkar104@gmail.com',
+      'At9011044875?'
+    );
+
+    console.log(promise);
+  } catch (error) {
+    console.log(error);
     throw error;
   }
 };
