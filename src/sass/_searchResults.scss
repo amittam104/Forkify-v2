@@ -12,6 +12,10 @@
 .pagination {
   margin-top: auto;
   padding: 0 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 3rem;
 
   &::after {
     content: "";
@@ -26,6 +30,21 @@
     &--next {
       float: right;
     }
+  }
+}
+
+.opac {
+  opacity: 0;
+}
+
+.page-numbers {
+  color: $color-grey-dark-2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+
+  span {
+    margin: 0 0.4rem;
   }
 }
 
