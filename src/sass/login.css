@@ -1,0 +1,98 @@
+.login-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80rem;
+  background-color: white;
+  border-radius: 9px;
+
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.6rem;
+  font-size: 3.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2.8rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #c2c2c27b;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.login-label {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.login-input {
+  width: 100%;
+  height: 4.6rem;
+  font-size: 1.6rem;
+  border-radius: 1.2rem;
+  outline: none;
+  border: 2px solid #1e3a8a;
+  padding-left: 2rem;
+}
+.login-input::placeholder {
+  color: #c2c2c2;
+}
+
+.welcome-login-modal {
+  width: 30%;
+  align-self: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem 2rem;
+  background: #1e3a8a;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-google-modal {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: 2px solid #1e3a8a;
+  border-radius: 10rem;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-login-modal::placeholder {
+  transform: scale(1.07);
+}
+.login-google-modal::placeholder {
+  transform: scale(1.07);
+}

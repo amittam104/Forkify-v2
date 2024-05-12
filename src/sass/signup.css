@@ -92,6 +92,8 @@
   border: 2px solid #1e3a8a;
   background: none;
   border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .login-auth-google {
@@ -101,4 +103,33 @@
   border: 1px solid #fff;
   border-radius: 10rem;
   background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-login:hover {
+  transform: scale(1.07);
+}
+.login-auth-google:hover {
+  transform: scale(1.07);
+}
+
+.navbar-login {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  padding: 1rem 2rem;
+  border: 2px solid #1e3a8a;
+  background: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar-login:hover {
+  transform: scale(1.07);
 }
