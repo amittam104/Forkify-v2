@@ -8,7 +8,11 @@
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="src/img/only-logo.png"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="src/sass/main.scss" />
     <script type="module" src="src/js/controller.js"></script>
@@ -137,6 +141,7 @@
 
       <div class="recipe">
         <div class="auth">
+          <h2 class="signup-header">Sign Up</h2>
           <form class="signup-form" action="submit">
             <div class="signup-form--field">
               <label class="signup-form--label" for="name">Name</label>
@@ -165,12 +170,14 @@
                 placeholder="Enter a unique password"
               />
             </div>
-            <button>Sign Up</button>
+            <button class="btn--signup">Sign Up</button>
           </form>
           <div class="login-options">
             <p class="login-question">Already have an account?</p>
-            <button class="welcome-login login-modal-open">Log in</button>
-            <button class="login-auth-google">Log in with Google</button>
+            <div class="btns-login">
+              <button class="welcome-login login-modal-open">Log in</button>
+              <button class="login-auth-google">Log in with Google</button>
+            </div>
           </div>
         </div>
         <!-- <div class="message">
@@ -367,7 +374,8 @@
         </button>
       </form>
     </div>
-    <div class="login-window hidden">
+    <div class="add-recipe-window login-window hidden">
+      <button class="btn--close-modal">&times;</button>
       <form class="login-form" action="submit">
         <div class="login-fields">
           <label class="login-label" for="login-email">Email</label
