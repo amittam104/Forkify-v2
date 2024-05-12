@@ -125,6 +125,11 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const controlSignUp = async function (emailId, password, name) {
+  // Create account - send request to appwrite
+  model.createAccount(emailId, password, name);
+};
+
 const init = function () {
   BookmarksView.addHandlerBookmarks(controlBookmarks);
   recipeView.addHandlerRender(showRecepie);
