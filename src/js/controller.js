@@ -129,9 +129,13 @@ const controlAddRecipe = async function (newRecipe) {
 const controlSignUp = async function (emailId, password, name) {
   try {
     // Create account - send request to appwrite
-    await model.createAccount(emailId, password, name);
+    const response = await model.createAccount(emailId, password, name);
+
+    console.log(response);
+    if (response) signUpView.renderMessage();
   } catch (error) {
     console.error(error);
+    signUpView.renderError();
   }
 };
 

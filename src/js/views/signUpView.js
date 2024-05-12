@@ -1,15 +1,17 @@
 import View from './View.js';
 
 class SignUpView extends View {
-  _parentElement = document.querySelector('.signup-form');
-  // _sigUpBtn = document.querySelector('.btn--signup');
+  _parentElement = document.querySelector('.recipe');
+  _FormElement = document.querySelector('.signup-form');
+  _errorMessage = `Something went wrong. Account cannot be created. Please try again!`;
+  _message = `Account created Sucessfully! Log in to get Started.`;
 
   _clearInput() {
-    this._parentElement.querySelector('.signup-form--input').value = '';
+    this._FormElement.querySelector('.signup-form--input').value = '';
   }
 
   addHandlerSignUp(handler) {
-    this._parentElement.addEventListener('submit', function (e) {
+    this._FormElement.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const SignUpName = document.querySelector('.name');
@@ -17,7 +19,7 @@ class SignUpView extends View {
       const password = document.querySelector('.password');
 
       // console.log(SignUpName.value, email.value, password.value);
-      handler(SignUpName.value, email.value, password.value);
+      handler(email.value, password.value, SignUpName.value);
     });
   }
 }

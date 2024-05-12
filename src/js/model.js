@@ -157,21 +157,14 @@ export const uploadRecipe = async function (newRecipe) {
 
 export const createAccount = async function (emailId, password, name) {
   try {
-    const response = await account.create(
-      ID.unique(),
-      `${name}`,
-      `${password}`,
-      `${emailId}`
-    );
-
-    console.log(typeof emailId, typeof password, typeof name);
+    const response = await account.create(ID.unique(), emailId, password, name);
 
     if (!response)
       throw new Error(
         'Something went wrong. Could not complete the sign up process.'
       );
 
-    console.log(response);
+    // console.log(response);
   } catch (error) {
     // console.log(error);
     throw error;
