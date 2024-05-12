@@ -1,5 +1,6 @@
 import { API_URL, RES_NO_PAGE, KEY } from './config.js';
 import { AJAX, account } from './helpers.js';
+import { ID } from 'appwrite';
 // import { getJSON, sendJSON } from './helpers.js';
 
 export const state = {
@@ -156,7 +157,14 @@ export const uploadRecipe = async function (newRecipe) {
 
 export const createAccount = async function (emailId, password, name) {
   try {
-    const response = await account.create(ID.unique(), emailId, password, name);
+    const response = await account.create(
+      ID.unique(),
+      `${name}`,
+      `${password}`,
+      `${emailId}`
+    );
+
+    console.log(typeof emailId, typeof password, typeof name);
 
     if (!response)
       throw new Error(
@@ -165,7 +173,7 @@ export const createAccount = async function (emailId, password, name) {
 
     console.log(response);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     throw error;
   }
 };
