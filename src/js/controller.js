@@ -131,8 +131,8 @@ const controlSignUp = async function (emailId, password, name) {
     // Create account - send request to appwrite
     const response = await model.createAccount(emailId, password, name);
 
-    console.log(response);
-    if (response) signUpView.renderMessage();
+    // Render Success Message
+    signUpView.renderMessage();
   } catch (error) {
     console.error(error);
     signUpView.renderError();
