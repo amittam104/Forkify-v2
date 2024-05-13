@@ -11,6 +11,7 @@ import addRecipeView from './views/addRecipeView.js';
 import signUpView from './views/signUpView.js';
 import loginView from './views/loginView.js';
 import logoutView from './views/logoutView.js';
+import mobileMenuVeiw from './views/mobileMenuVeiw.js';
 
 // https://forkify-api.herokuapp.com/v2
 
@@ -175,7 +176,9 @@ const controlLogOut = async function () {
   }
 };
 
-// controlLogOut();
+const controlMobileMenu = function () {
+  mobileMenuVeiw.addHandlerMobileMenu();
+};
 
 const init = function () {
   BookmarksView.addHandlerBookmarks(controlBookmarks);
@@ -188,6 +191,7 @@ const init = function () {
   signUpView.addHandlerSignUp(controlSignUp);
   loginView.addHandlerLogin(controlLogin);
   logoutView.addHandlerLogout(controlLogOut);
+  controlMobileMenu();
 };
 
 init();

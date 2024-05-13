@@ -18,7 +18,7 @@
   // gap: 3rem;
 
   &::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -57,5 +57,11 @@
   .twitter-link:link,
   .twitter-link:visited {
     color: $color-grey-dark-2;
+  }
+}
+
+@media (max-width: 376px) {
+  .copyright {
+    display: none;
   }
 }

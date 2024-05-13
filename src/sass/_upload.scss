@@ -97,3 +97,18 @@
     justify-self: center;
   }
 }
+
+@media (max-width: 376px) {
+  .add-recipe-window {
+    width: 100vw;
+    padding: 2rem;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .upload {
+    grid-template-columns: 1fr;
+  }
+}

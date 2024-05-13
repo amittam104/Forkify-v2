@@ -133,3 +133,9 @@
 .navbar-login:hover {
   transform: scale(1.07);
 }
+
+@media (max-width: 376px) {
+  .auth {
+    max-width: 100%;
+  }
+}

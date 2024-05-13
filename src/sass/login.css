@@ -111,3 +111,18 @@
 .navbar-logout:hover {
   transform: scale(1.07);
 }
+
+@media (max-width: 376px) {
+  .login-window {
+    width: 100vw;
+    padding: 2rem;
+  }
+
+  .welcome-login-modal {
+    width: 50%;
+  }
+
+  .login-form {
+    width: 80%;
+  }
+}
