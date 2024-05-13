@@ -1,8 +1,7 @@
 import View from './View.js';
 
 class LoginView extends View {
-  _parentElement = document.querySelector('.login-window-box');
-  _FormElement = document.querySelector('.login-form');
+  _parentElement = document.querySelector('.login-form');
   _errorMessage = `Something went wrong. Log in failed. Please try again!`;
   _message = 'You are successfuly Loged in! Start searching for recipes.';
 
@@ -11,7 +10,7 @@ class LoginView extends View {
   _btnOpen = document.querySelector('.navbar-login');
   _btnMainOpen = document.querySelector('.welcome-login');
   _btnClose = document.querySelector('.btn--close-modal-login');
-  _btnLogOut = document.querySelector('.navbar-logout');
+  // _btnLogOut = document.querySelector('.navbar-logout');
 
   constructor() {
     super();
@@ -38,23 +37,23 @@ class LoginView extends View {
   }
 
   addHandlerLogin(handler) {
-    this._FormElement.addEventListener('submit', function (e) {
+    this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const email = document.querySelector('#login-email');
       const password = document.querySelector('#login-password');
 
-      // console.log(email.value, password.value);
+      console.log(email.value, password.value);
       handler(email.value, password.value);
 
-      // Hide Login button and show logout button
+      // // Hide Login button and show logout button
+      document.querySelector('.navbar-login').classList.add('hidden');
+      document.querySelector('.navbar-logout').classList.remove('hidden');
+
+      // Clear the recipe area
+      this._parentElement = document.querySelector('.recipe');
     });
   }
-
-  // renderLogOut() {
-  //   _btnOpen.classList.add('hidden');
-  //   _btnLogOut.classList.remove('hidden');
-  // }
 }
 
 export default new LoginView();
