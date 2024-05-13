@@ -1,7 +1,9 @@
 import View from './View.js';
+import icons from 'url:../../img/icons.svg';
 
 class LoginView extends View {
   _parentElement = document.querySelector('.login-form');
+  _mainAppArea = document.querySelector('.recipe');
   _errorMessage = `Something went wrong. Log in failed. Please try again!`;
   _message = 'You are successfuly Loged in! Start searching for recipes.';
 
@@ -11,6 +13,14 @@ class LoginView extends View {
   _btnMainOpen = document.querySelector('.welcome-login');
   _btnClose = document.querySelector('.btn--close-modal-login');
   // _btnLogOut = document.querySelector('.navbar-logout');
+
+  // Enable app variables
+  _searchField = document.querySelector('.search__field');
+  _SearchBtn = document.querySelector('.search__btn');
+  _addRecipe = document.querySelector('.nav__btn--add-recipe');
+  _addBookmarks = document.querySelector('.nav__btn--bookmarks');
+  _addRecipeBox = document.querySelector('.add-recipe-box');
+  _addBookmarksBox = document.querySelector('.bookmarks-box');
 
   constructor() {
     super();
@@ -53,6 +63,32 @@ class LoginView extends View {
       // Clear the recipe area
       this._parentElement = document.querySelector('.recipe');
     });
+  }
+
+  renderWelcomeMessage(message = this._message) {
+    const markup = `
+      <div class="message">
+        <div>
+          <svg>
+            <use href="${icons}#icon-smile"></use>
+          </svg>
+        </div>
+        <p>${message}</p>
+      </div>
+    `;
+
+    this._mainAppArea.innerHTML = '';
+    this._mainAppArea.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  addHandlerEnableApp() {
+    this._searchField.disabled = false;
+    this._SearchBtn.disabled = false;
+    this._addRecipe.disabled = false;
+    this._addBookmarks.disabled = false;
+
+    this._addRecipeBox.classList.remove('hidden');
+    this._addBookmarksBox.classList.remove('hidden');
   }
 }
 

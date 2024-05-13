@@ -148,6 +148,12 @@ const controlLogin = async function (emailid, password) {
 
     // Render success message
     loginView.renderMessage();
+
+    // Render welcome message
+    loginView.renderWelcomeMessage();
+
+    // Enable app
+    loginView.addHandlerEnableApp();
   } catch (error) {
     console.error(error);
     loginView.renderError();
@@ -159,7 +165,10 @@ const controlLogOut = async function () {
     await model.logoutAccount();
 
     // Sucess Message
-    logoutView.renderMessage();
+    // logoutView.renderMessage();
+
+    // Disable app
+    logoutView.addHandlerDisableApp();
   } catch (error) {
     console.log(error);
     logoutView.renderError();

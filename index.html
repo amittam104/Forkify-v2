@@ -27,10 +27,11 @@
         <form class="search">
           <input
             type="text"
+            disabled
             class="search__field"
             placeholder="Search over 1,000,000 recipes..."
           />
-          <button class="btn search__btn">
+          <button disabled class="btn search__btn">
             <svg class="search__icon">
               <use href="src/img/icons.svg#icon-search"></use>
             </svg>
@@ -39,16 +40,16 @@
 
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item">
-              <button class="nav__btn nav__btn--add-recipe">
+            <li class="nav__item add-recipe-box hidden">
+              <button disabled class="nav__btn nav__btn--add-recipe">
                 <svg class="nav__icon">
                   <use href="src/img/icons.svg#icon-edit"></use>
                 </svg>
                 <span>Add recipe</span>
               </button>
             </li>
-            <li class="nav__item">
-              <button class="nav__btn nav__btn--bookmarks">
+            <li class="nav__item bookmarks-box hidden">
+              <button disabled class="nav__btn nav__btn--bookmarks">
                 <svg class="nav__icon">
                   <use href="src/img/icons.svg#icon-bookmark"></use>
                 </svg>
@@ -177,7 +178,7 @@
             <p class="login-question">Already have an account?</p>
             <div class="btns-login">
               <button class="welcome-login login-modal-open">Log in</button>
-              <button class="login-auth-google">
+              <!-- <button class="login-auth-google">
                 Log in with Google
                 <span
                   ><svg
@@ -205,7 +206,7 @@
                     />
                   </svg>
                 </span>
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -426,7 +427,7 @@
           />
         </div>
         <button class="welcome-login-modal login-button">Log in</button>
-        <button class="login-google-modal">
+        <!-- <button class="login-google-modal">
           Log in with Google
           <span
             ><svg
@@ -454,7 +455,7 @@
               />
             </svg>
           </span>
-        </button>
+        </button> -->
       </form>
     </div>
   </body>
