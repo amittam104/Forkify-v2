@@ -17,7 +17,7 @@
   justify-content: center;
 }
 
-.btn--close-modal {
+.btn--close-modal-login {
   font-family: inherit;
   color: inherit;
   position: absolute;
@@ -87,12 +87,27 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
-.welcome-login-modal::placeholder {
+.welcome-login-modal:hover {
   transform: scale(1.07);
 }
-.login-google-modal::placeholder {
+.login-google-modal:hover {
+  transform: scale(1.07);
+}
+
+.navbar-logout {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar-logout:hover {
   transform: scale(1.07);
 }

@@ -170,3 +170,34 @@ export const createAccount = async function (emailId, password, name) {
     throw error;
   }
 };
+
+export const loginAccount = async function (emailid, password) {
+  try {
+    const response = await account.createEmailPasswordSession(
+      emailid,
+      password
+    );
+
+    if (!response)
+      throw new Error(
+        'Something went wrong. Could not complete the Log in process. Please try again!'
+      );
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const logoutAccount = async function () {
+  try {
+    const result = await account.deleteSession(
+      'current' // sessionId
+    );
+
+    if (!result)
+      throw new Error(
+        'Something went wrong. Could not complete the Log out process. Please try again!'
+      );
+  } catch (error) {
+    throw error;
+  }
+};

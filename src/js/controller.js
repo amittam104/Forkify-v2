@@ -9,6 +9,7 @@ import paginationView from './views/paginationView.js';
 import BookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
 import signUpView from './views/signUpView.js';
+import loginView from './views/loginView.js';
 
 // https://forkify-api.herokuapp.com/v2
 
@@ -139,6 +140,28 @@ const controlSignUp = async function (emailId, password, name) {
   }
 };
 
+const controlLogin = async function (emailid, password) {
+  try {
+    // Log in user - send request to appwrite
+    await model.loginAccount(emailid, password);
+
+    // Render success message
+    loginView.renderMessage();
+
+    // Remove login and add logout button
+    // loginView.renderLogOut();
+  } catch (error) {
+    console.error(error);
+    loginView.renderError();
+  }
+};
+
+const controlLogOut = async function () {
+  await model.logoutAccount();
+};
+
+// controlLogOut();
+
 const init = function () {
   BookmarksView.addHandlerBookmarks(controlBookmarks);
   recipeView.addHandlerRender(showRecepie);
@@ -148,6 +171,7 @@ const init = function () {
   paginationView.addHandlerPagination(controllerPagination);
   addRecipeView.addHandlerRecipeUpload(controlAddRecipe);
   signUpView.addHandlerSignUp(controlSignUp);
+  loginView.addHandlerLogin(controlLogin);
 };
 
 init();
