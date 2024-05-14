@@ -40,21 +40,21 @@ class LogoutView extends View {
     this._addRecipe.disabled = true;
     this._addBookmarks.disabled = true;
 
-    // clear the recipe area
+    // // clear the recipe area
     this._parentElement.innerHTML = '';
 
-    const markup = `
-      <div class="message">
-        <div>
-          <svg>
-            <use href="${icons}#icon-smile"></use>
-          </svg>
-        </div>
-        <p>${message}</p>
-      </div>
-    `;
+    // const markup = `
+    //   <div class="message">
+    //     <div>
+    //       <svg>
+    //         <use href="${icons}#icon-smile"></use>
+    //       </svg>
+    //     </div>
+    //     <p>${message}</p>
+    //   </div>
+    // `;
 
-    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    // this._parentElement.insertAdjacentHTML('afterbegin', markup);
 
     this._searchResults.innerHTML = '';
     history.replaceState(null, null, ' ');
@@ -64,6 +64,8 @@ class LogoutView extends View {
 
     document.querySelector('.navbar-login').classList.remove('hidden');
     document.querySelector('.navbar-logout').classList.add('hidden');
+
+    location.reload();
   }
 }
 

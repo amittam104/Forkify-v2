@@ -220,7 +220,8 @@ const init = function () {
   }
 
   if (!isLoggedIn) {
-    logoutView.addHandlerDisableApp();
+    // logoutView.addHandlerDisableApp();
+    signUpView.addHandlerSignUp(controlSignUp);
   }
 };
 
