@@ -65,6 +65,10 @@ class LoginView extends View {
     });
   }
 
+  // addHandlerRender(handler) {
+  //   ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+  // }
+
   renderWelcomeMessage(message = this._message) {
     const markup = `
       <div class="message">
@@ -89,6 +93,9 @@ class LoginView extends View {
 
     this._addRecipeBox.classList.remove('hidden');
     this._addBookmarksBox.classList.remove('hidden');
+
+    document.querySelector('.navbar-login').classList.add('hidden');
+    document.querySelector('.navbar-logout').classList.remove('hidden');
   }
 }
 

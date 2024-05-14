@@ -153,7 +153,11 @@ const controlLogin = async function (emailid, password) {
     // Render welcome message
     loginView.renderWelcomeMessage();
 
+    // Store login state in localStorage
+    localStorage.setItem('loggedIn', true);
+
     // Enable app
+    // if (model.state.logedin)
     loginView.addHandlerEnableApp();
   } catch (error) {
     console.error(error);
@@ -165,11 +169,13 @@ const controlLogOut = async function () {
   try {
     await model.logoutAccount();
 
+    // Remove login state from localStorage
+    localStorage.removeItem('loggedIn');
+
     // Sucess Message
     // logoutView.renderMessage();
-
-    // Disable app
     logoutView.addHandlerDisableApp();
+    // Disable app
   } catch (error) {
     console.log(error);
     logoutView.renderError();
@@ -179,6 +185,17 @@ const controlLogOut = async function () {
 const controlMobileMenu = function () {
   mobileMenuVeiw.addHandlerMobileMenu();
 };
+
+// const controlCurrentAccount = async function () {
+//   try {
+//     const response = await model.getCurrentAccount();
+
+//     loginView.addHandlerKeepLogin();
+//   } catch (error) {
+//     logoutView.addHandlerKeepLogOut();
+//     console.log(error);
+//   }
+// };
 
 const init = function () {
   BookmarksView.addHandlerBookmarks(controlBookmarks);
@@ -192,6 +209,19 @@ const init = function () {
   loginView.addHandlerLogin(controlLogin);
   logoutView.addHandlerLogout(controlLogOut);
   controlMobileMenu();
+  // loginView.addHandlerRender(controlCurrentAccount);
+
+  // Check login state from localStorage
+  const isLoggedIn = localStorage.getItem('loggedIn');
+
+  // Enable app if user is logged in
+  if (isLoggedIn) {
+    loginView.addHandlerEnableApp();
+  }
+
+  if (!isLoggedIn) {
+    logoutView.addHandlerDisableApp();
+  }
 };
 
 init();

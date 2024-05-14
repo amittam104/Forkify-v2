@@ -27,6 +27,9 @@ class LogoutView extends View {
       document.querySelector('.navbar-login').classList.remove('hidden');
       document.querySelector('.navbar-logout').classList.add('hidden');
 
+      // Remove login state from localStorage
+      localStorage.removeItem('loggedIn');
+
       handler();
     });
   }
@@ -58,6 +61,9 @@ class LogoutView extends View {
 
     this._addRecipeBox.classList.add('hidden');
     this._addBookmarksBox.classList.add('hidden');
+
+    document.querySelector('.navbar-login').classList.remove('hidden');
+    document.querySelector('.navbar-logout').classList.add('hidden');
   }
 }
 

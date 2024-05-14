@@ -201,3 +201,14 @@ export const logoutAccount = async function () {
     throw error;
   }
 };
+
+export const getCurrentAccount = async function () {
+  try {
+    const result = await account.get();
+
+    state.logedin = true;
+  } catch (error) {
+    state.logedin = false;
+    throw error;
+  }
+};
