@@ -5,7 +5,7 @@ class LogoutView extends View {
   _parentElement = document.querySelector('.recipe');
   _searchResults = document.querySelector('.results');
   _errorMessage = `Something went wrong. Log out failed. Please try again!`;
-  _message = 'You are successfuly Loged out! Log in to get started.';
+  _message = 'Log in to get started. Start searching for recipes.';
 
   _btnOpen = document.querySelector('.navbar-login');
   _btnClose = document.querySelector('.btn--close-modal-login');
